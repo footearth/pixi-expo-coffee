@@ -1,0 +1,29 @@
+# OSX
+#
+.DS_Store
+
+# Android/IJ
+#
+.idea
+
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p12
+*.key
+*.mobileprovision
+
+dist
+build
+dest
+.tmp
+tmp
+
+yarn.lock
+yarn*log
+.yarn*
+
+public
+src
+.cache
