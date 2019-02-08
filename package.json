@@ -8,16 +8,17 @@
   },
   "dependencies": {
     "@expo/browser-polyfill": "^0.0.1-alpha.3",
+    "@pixi/app": "^5.0.0-rc",
     "expo": "^32.0.0",
-    "expo-gl": "^2.0.0",
     "expo-graphics": "^1.0.3",
-    "gl-util": "^3.1.1",
     "pixi.js": "^5.0.0-rc",
     "react": "^16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "schedule": "0.4.0"
   },
   "comment": {
+    "expo-gl": "^2.0.0",
+    "gl-util": "^3.1.1",
     "cfx.react.dom": "^0.0.14",
     "expo-pixi": "^1.0.0",
     "ddeyes": "^0.2.15",
