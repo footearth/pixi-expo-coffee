@@ -1,5 +1,5 @@
 # https://github.com/expo/expo/blob/master/apps/native-component-list/screens/GL/GLWrap.js
-
+import './BeforePIXI'
 import React from 'react'
 
 # import { GLView } from 'expo'
@@ -19,7 +19,7 @@ export default (title, onContextCreate, onRender) =>
       # cancelAnimationFrame @_rafID
       @title = title
       @
-      
+
     _onContextCreate: ({
       gl
       canvas

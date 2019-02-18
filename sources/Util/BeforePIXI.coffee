@@ -1,7 +1,10 @@
 # https://github.com/expo/expo/blob/master/apps/native-component-list/screens/GL/BeforePIXI.native.js
-
 import '@expo/browser-polyfill'
 import { Image, Dimensions } from 'react-native'
+
+# if (global.gl) { return global.gl };
+# sed -i '' '/if (!context)/i
+# if (global.gl) { return global.gl };' ./node_modules/@pixi/core/lib/core.js
 
 class DOMNode
   constructor: (nodeName) ->
@@ -111,4 +114,5 @@ class HTMLImageElement
     @
 
 global.HTMLImageElement = global.Image = HTMLImageElement
-global.performance = null
+global.performance =
+  now: =>

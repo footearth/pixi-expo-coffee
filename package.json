@@ -1,6 +1,7 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "prestart": "coffee ./fixPIXI/index.coffee",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -8,9 +9,9 @@
   },
   "dependencies": {
     "@expo/browser-polyfill": "^0.0.1-alpha.3",
-    "@pixi/app": "^5.0.0-rc",
     "expo": "^32.0.0",
     "expo-graphics": "^1.0.3",
+    "path": "^0.12.7",
     "pixi.js": "^5.0.0-rc",
     "react": "^16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
+    "cfx.require-plugin-coffee": "^0.2.21",
     "cfx.simple-build-tool": "^0.0.13"
   },
   "private": true

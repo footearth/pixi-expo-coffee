@@ -1,5 +1,4 @@
 import React from 'react'
-import './Util/BeforePIXI'
 
 # import cfxify from 'cfx.react.dom'
 # CFX = {
@@ -10,8 +9,12 @@ import './Util/BeforePIXI'
 # { Application } = PIXI
 # import { Application } from '@pixi/app'
 
-import SimpleGL from './SimpleGL'
+# import SimpleGL from './SimpleGL'
+# import TextureGL from './TextureGL'
+import SimplePIXI from './SimplePIXI'
 
 export default =>
 
-  <SimpleGL />
+  # <SimpleGL />
+  # <TextureGL />
+  <SimplePIXI />
