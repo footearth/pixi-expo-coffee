@@ -1,0 +1,37 @@
+# webgl-util
+
+- loadShader
+- createProgram
+<!-- 
+- createShaderFromScript
+- createProgramFromScripts
+-->
+- createProgramFromSources
+- getBindPointForSamplerType
+- createUniformSetters
+- createUniformSetter
+- setUniforms
+- createAttributeSetters
+- setAttributes
+- createVAOAndSetAttributes
+- createVAOFromBufferInfo
+- createProgramInfo
+- setBuffersAndAttributes 
+- getExtensionWithKnownPrefixes
+- resizeCanvasToDisplaySize
+- augmentTypedArray
+- createAugmentedTypedArray
+- createBufferFromTypedArray
+- allButIndices
+- createMapping
+- getGLTypeForTypedArray
+- getNormalizationForTypedArray
+- isArrayBuffer
+- guessNumComponentsFromName
+- makeTypedArray
+- createAttribsFromArrays
+- getNumElementsFromNonIndexedArrays
+- createBufferInfoFromArrays
+- createBuffersFromArrays
+- drawBufferInfo
+- drawObjectList

@@ -5,6 +5,9 @@ import {
 } from 'fs'
 import dd from 'ddeyes'
 
+# sed -i '' '/if (!context)/i
+# if (global.gl) { return global.gl };' ./node_modules/@pixi/core/lib/core.js
+
 fixPIXIFile = join __dirname
 , '../node_modules/@pixi/core/lib/core.js'
 

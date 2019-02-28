@@ -41,22 +41,29 @@ export default GLWrap 'SimplePIXI', ({
     # app.ticker.add =>
     #   gl.endFrameEXP()
 
+    # graphics = new PIXI.Graphics()
+
+    # graphics.moveTo 0, 0
+    # graphics.lineStyle 1
+    # graphics.lineTo -10, 0
+
+    # graphics.lineStyle 0
+    # graphics.beginFill 0x00ff00
+    # graphics.drawCircle(
+    #   width / 2
+    #   height / 2
+    #   50
+    # )
+    # graphics.endFill()
+
+    app.stage.addChild graphics
+
   catch e
     # console.warn e.stack
     console.warn e
 
   # simpleGl gl
 
-  # graphics = new PIXI.Graphics()
-  # graphics.lineStyle 0
-  # graphics.beginFill 0x00ff00
-  # graphics.drawCircle(
-  #   width / 2
-  #   height / 2
-  #   50
-  # )
-  # graphics.endFill()
-
-  # app.stage.addChild graphics
+  
 
   app

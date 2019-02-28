@@ -2,10 +2,6 @@
 import '@expo/browser-polyfill'
 import { Image, Dimensions } from 'react-native'
 
-# if (global.gl) { return global.gl };
-# sed -i '' '/if (!context)/i
-# if (global.gl) { return global.gl };' ./node_modules/@pixi/core/lib/core.js
-
 class DOMNode
   constructor: (nodeName) ->
     @nodeName = nodeName

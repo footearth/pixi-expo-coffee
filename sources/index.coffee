@@ -9,12 +9,12 @@ import React from 'react'
 # { Application } = PIXI
 # import { Application } from '@pixi/app'
 
-# import SimpleGL from './SimpleGL'
-# import TextureGL from './TextureGL'
-import SimplePIXI from './SimplePIXI'
+# import SimplePIXI from './SimplePIXI'
+import SimpleGL from './SimpleGL'
+# import RectangleGL from './RectangleGL'
 
 export default =>
 
-  # <SimpleGL />
-  # <TextureGL />
-  <SimplePIXI />
+  # <SimplePIXI />
+  <SimpleGL />
+  # <RectangleGL />
