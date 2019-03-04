@@ -1,56 +1,40 @@
 import {
-  Program
-  clearScreen
-} from '../Util/WebGL'
+  Application
+} from '../Util/newPIXI'
 
-drawProgram = (gl) =>
+drawProgram = ({
+  gl
+  width
+  height
+}) =>
 
-  clearScreen gl
+  app = new Application gl, {
+    width
+    height
+  }
 
-  program = new Program gl
-
-  program.start gl
-
-  positionBuffer = gl.createBuffer()
-  gl.bindBuffer gl.ARRAY_BUFFER, positionBuffer
-
-  positions = [
-    0, 0
-    0, 0.5
-    0.7, 0
+  app.init new Float32Array [
+    width / 2, 60
+    width / 2, height / 2
+    width - 20, height / 2
   ]
 
-  gl.bufferData(
-    gl.ARRAY_BUFFER
-    new Float32Array positions
-    gl.STATIC_DRAW
-  )
-
-  gl.bindBuffer gl.ARRAY_BUFFER, positionBuffer
-
-  size = 2
-  type = gl.FLOAT
-  normalize = false
-  stride = 0
-  offset = 0
-
-  gl.vertexAttribPointer(
-    program.getLocation().attribute.position
-    size, type, normalize
-    stride, offset
-  )
-
-  primitiveType = gl.TRIANGLES
-  offset = 0
-  count = 3
-  gl.drawArrays primitiveType, offset, count
+  app.draw()
 
   return
 
-export default (gl) =>
+export default ({
+  gl
+  width
+  height
+}) =>
 
   try
-    drawProgram gl
+    drawProgram {
+      gl
+      width
+      height
+    }
   catch e
     console.log e
 

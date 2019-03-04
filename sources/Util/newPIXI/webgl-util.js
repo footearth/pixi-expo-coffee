@@ -70,14 +70,12 @@
     }
   }
 
-
   /**
    * Error Callback
    * @callback ErrorCallback
    * @param {string} msg error message.
    * @memberOf module:webgl-utils
    */
-
 
   /**
    * Loads a shader.

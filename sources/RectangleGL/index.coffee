@@ -8,6 +8,10 @@ export default GLWrap 'SimpleGLWithPIXI', ({
   width
 }) =>
 
-  rectangleGL gl
+  rectangleGL {
+    gl
+    height
+    width
+  }
 
   return
