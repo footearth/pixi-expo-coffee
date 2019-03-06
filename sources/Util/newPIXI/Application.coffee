@@ -17,12 +17,18 @@ ApplicationCreator = =>
     @gl = gl
     @width = width
     @height = height
+    @count = 0
 
     @
 
-  Application::init = (arrayData) ->
+  Application::init = (createPolygon, arrayData) ->
 
-    createBuffer @gl, arrayData
+    polygonArr = createPolygon arrayData
+
+    createBuffer @gl
+    , new Float32Array polygonArr
+
+    @count = polygonArr.length / 2
 
     @program.start()
 
@@ -42,7 +48,7 @@ ApplicationCreator = =>
 
     primitiveType = @gl.TRIANGLES
     offset = 0
-    count = 3
+    count = @count
 
     @gl.drawArrays primitiveType, offset, count
 
