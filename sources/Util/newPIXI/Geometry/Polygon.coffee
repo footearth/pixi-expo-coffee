@@ -176,11 +176,11 @@ cclp = (pArr) =>
       ]
     ]
   .reduce reduceSlice
-  # .reduce (r, c) =>
-  #   [
-  #     r...
-  #     c...
-  #   ]
+  .reduce (r, c) =>
+    [
+      r...
+      c...
+    ]
   .done()
 
 export {
@@ -215,6 +215,5 @@ export default (pointArray) =>
       equalPoint
     )
   )
-  .reduce reduceFlatten
   .reduce reduceFlatten
   .done()
