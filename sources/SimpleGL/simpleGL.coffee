@@ -25,6 +25,11 @@ drawProgram = ({
         width / 2, height / 2
         width - 20, height / 2
       ]
+      color: [
+        Math.random()
+        Math.random()
+        Math.random()
+      ]
     ,
       creator: Polygon
       data: [
@@ -32,6 +37,11 @@ drawProgram = ({
         ( width / 2) - 20, ( height / 2 ) - 20 
         20, ( height / 2 ) - 20
         ( width / 2 ) - 20, 20
+      ]
+      color: [
+        Math.random()
+        Math.random()
+        Math.random()
       ]
   ]
 

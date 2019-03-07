@@ -9,7 +9,7 @@ ProgramCreator = =>
     {
       position = 'a_position'
       resolution = 'u_resolution'
-      # color = 'u_color'
+      color = 'u_color'
     } = {}
   ) ->
 
@@ -26,9 +26,9 @@ ProgramCreator = =>
         resolution:
           gl.getUniformLocation program
           , resolution
-        # color:
-        #   gl.getUniformLocation program
-        #   , color
+        color:
+          gl.getUniformLocation program
+          , color
 
     @
 

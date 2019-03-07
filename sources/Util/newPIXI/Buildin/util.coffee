@@ -20,7 +20,19 @@ resizeToDisplaySize = (gl, resolution, width, height) =>
   
   return
 
+setColor = (gl, colorUniform, colorArr) =>
+
+  gl.uniform4f.apply gl
+  , [
+    colorUniform
+    colorArr...
+    1
+  ]
+
+  return
+
 export {
   clearScreen
   resizeToDisplaySize
+  setColor
 }

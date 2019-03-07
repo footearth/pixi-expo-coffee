@@ -2,6 +2,7 @@ import Program from './Buildin/Program'
 import {
   clearScreen
   resizeToDisplaySize
+  setColor
 } from './Buildin/util'
 import createBuffer from './Buildin/Buffer'
 import createVertex from './Buildin/Vertex'
@@ -35,6 +36,7 @@ ApplicationCreator = =>
       self.buffers = [
         self.buffers...
         polygon: new Float32Array polygonArr
+        color: pCreator.color
         count: polygonArr.length / 2
       ]
 
@@ -56,7 +58,7 @@ ApplicationCreator = =>
 
     self = @
 
-    self.buffers.reduce (self, {polygon, count}) =>
+    self.buffers.reduce (self, {polygon, color, count}) =>
 
       {
         gl
@@ -68,6 +70,10 @@ ApplicationCreator = =>
 
       createVertex gl
       , program.getLocation().attribute.position
+
+      setColor gl
+      , program.getLocation().uniform.color
+      , color
 
       primitiveType = gl.TRIANGLES
       offset = 0
