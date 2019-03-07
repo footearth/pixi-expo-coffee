@@ -18,21 +18,22 @@ drawProgram = ({
   }
 
   
-  app.init(
-    # Triangle
-    # [
-    #   width / 2, 60
-    #   width / 2, height / 2
-    #   width - 20, height / 2
-    # ]
-    Polygon
-    [
-      20, 20
-      width - 20, height - 20 
-      20, height - 20
-      width - 20, 20
-    ]
-  )
+  app.init [
+      creator: Triangle
+      data: [
+        width / 2, 60
+        width / 2, height / 2
+        width - 20, height / 2
+      ]
+    ,
+      creator: Polygon
+      data: [
+        20, 20
+        ( width / 2) - 20, ( height / 2 ) - 20 
+        20, ( height / 2 ) - 20
+        ( width / 2 ) - 20, 20
+      ]
+  ]
 
   app.draw()
 

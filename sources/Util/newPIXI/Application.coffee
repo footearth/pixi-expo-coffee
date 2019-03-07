@@ -17,42 +17,68 @@ ApplicationCreator = =>
     @gl = gl
     @width = width
     @height = height
-    @count = 0
+
+    @buffers = []
 
     @
 
-  Application::init = (createPolygon, arrayData) ->
+  Application::init = (polygonCreators) ->
 
-    polygonArr = createPolygon arrayData
+    self = @
 
-    createBuffer @gl
-    , new Float32Array polygonArr
+    polygonCreators.reduce (self, pCreator) =>
 
-    @count = polygonArr.length / 2
+      polygonArr = pCreator.creator(
+        pCreator.data
+      )
 
-    @program.start()
+      self.buffers = [
+        self.buffers...
+        polygon: new Float32Array polygonArr
+        count: polygonArr.length / 2
+      ]
+
+      self
+    , self
 
     clearScreen @gl
+
+    @program.start()
 
     resizeToDisplaySize @gl
     , @program.getLocation().uniform.resolution
     , @width
     , @height
 
-    createVertex @gl
-    , @program.getLocation().attribute.position
-
-    @
+    self
 
   Application::draw = ->
 
-    primitiveType = @gl.TRIANGLES
-    offset = 0
-    count = @count
+    self = @
 
-    @gl.drawArrays primitiveType, offset, count
+    self.buffers.reduce (self, {polygon, count}) =>
 
-    @
+      {
+        gl
+        buffers
+        program
+      } = self
+
+      createBuffer gl, polygon
+
+      createVertex gl
+      , program.getLocation().attribute.position
+
+      primitiveType = gl.TRIANGLES
+      offset = 0
+
+      gl.drawArrays primitiveType
+      , offset, count
+
+      self
+    , self
+
+    self
 
   Application
 
