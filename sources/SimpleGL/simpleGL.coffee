@@ -17,33 +17,38 @@ drawProgram = ({
     height
   }
 
+  # creator: Triangle
+  # data: [
+  #   width / 2, 60
+  #   width / 2, height / 2
+  #   width - 20, height / 2
+  # ]
+  # color: [
+  #   Math.random()
+  #   Math.random()
+  #   Math.random()
+  # ]
   
-  app.init [
-      creator: Triangle
-      data: [
-        width / 2, 60
-        width / 2, height / 2
-        width - 20, height / 2
+  app.init(
+    [1..50].reduce (r, c) =>
+      [
+        r...
+        creator: Polygon
+        data: [1..10].reduce (_r) =>
+          [
+            _r...
+            Math.random() * width
+            Math.random() * height
+          ]
+        , []
+        color: [
+          Math.random()
+          Math.random()
+          Math.random()
+        ]
       ]
-      color: [
-        Math.random()
-        Math.random()
-        Math.random()
-      ]
-    ,
-      creator: Polygon
-      data: [
-        20, 20
-        ( width / 2) - 20, ( height / 2 ) - 20 
-        20, ( height / 2 ) - 20
-        ( width / 2 ) - 20, 20
-      ]
-      color: [
-        Math.random()
-        Math.random()
-        Math.random()
-      ]
-  ]
+    , []
+  )
 
   app.draw()
 
