@@ -11,10 +11,8 @@ import React from 'react'
 
 # import SimplePIXI from './SimplePIXI'
 import SimpleGL from './SimpleGL'
-# import RectangleGL from './RectangleGL'
 
 export default =>
 
   # <SimplePIXI />
   <SimpleGL />
-  # <RectangleGL />
