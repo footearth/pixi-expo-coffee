@@ -28,7 +28,7 @@ drawProgram = ({
   #   Math.random()
   #   Math.random()
   # ]
-  
+
   app.init(
     [1..50].reduce (r, c) =>
       [
@@ -41,11 +41,12 @@ drawProgram = ({
             Math.random() * height
           ]
         , []
-        color: [
-          Math.random()
-          Math.random()
-          Math.random()
-        ]
+        color: [1..3].reduce (_r_) =>
+          [
+            _r_...
+            Math.random()
+          ]
+        , []
       ]
     , []
   )
