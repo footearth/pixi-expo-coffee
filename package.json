@@ -15,7 +15,8 @@
     "pixi.js": "^5.0.0-rc",
     "react": "^16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "schedule": "0.4.0"
+    "schedule": "0.4.0",
+    "three": "^0.102.1"
   },
   "comment": {
     "expo-gl": "^2.0.0",

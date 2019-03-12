@@ -14,10 +14,11 @@ export default (title, onContextCreate, onRender) =>
 
   class extends React.Component
 
+    @title = title
+
     componentWillUnmount: ->
       @_gl = null
-      # cancelAnimationFrame @_rafID
-      @title = title
+      cancelAnimationFrame @_rafID
       @
 
     _onContextCreate: ({
@@ -27,33 +28,30 @@ export default (title, onContextCreate, onRender) =>
       width
     }) ->
       @_gl = gl
-      # {
-      #   result: {
-      #     onTick = => {}
-      #   } = {}
-      # } =
-      #   result:
-      await onContextCreate {
-        gl: @_gl
-        canvas
-        height
-        width
-      }
+      {
+        result: {
+          onTick = => {}
+        } = {}
+      } =
+        result: await onContextCreate {
+          gl: @_gl
+          canvas
+          height
+          width
+        }
 
-      # animate = do ->
-      #   if @_gl
-      #     @_rafID = requestAnimationFrame animate
-      #     onTick @_gl
+      animate = ->
+        if @_gl
+          @_rafID = requestAnimationFrame animate
+          onTick @_gl
 
-      # do animate
-
-      return
+      do animate
 
     render: ->
       <View
         style={[
           flex: 1
-          backgroundColor: '#4630ec'
+          backgroundColor: '#ffffff'
           @props.style
         ]}
       >
@@ -61,9 +59,7 @@ export default (title, onContextCreate, onRender) =>
           style={ flex: 1 }
           onContextCreate={@_onContextCreate}
           onRender={
-            onRender or (
-              (delta) => return
-            )
+            onRender or ( => )
           }
         />
       </View>

@@ -11,8 +11,10 @@ import React from 'react'
 
 # import SimplePIXI from './SimplePIXI'
 import SimpleGL from './SimpleGL'
+import SimpleThree from './SimpleThree'
 
 export default =>
 
   # <SimplePIXI />
-  <SimpleGL />
+  # <SimpleGL />
+  <SimpleThree />
